@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react';
 import {io} from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3001');
+const DEV_URL = 'http://localhost:3001';
+const DEPLOY_URL = 'https://socket-tester-server.onrender.com';
+
+const socket = io(DEPLOY_URL);
 
 socket.on('connect', () => {
   console.log('SID', socket.id);
